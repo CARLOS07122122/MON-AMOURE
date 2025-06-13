@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Amour - Delicias Dulces y Saladas</title>
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rosa-vibrante: #FF6B8B;
+            --amarillo-soleado: #FFD166;
+            --verde-menta: #06D6A0;
+            --azul-cielo: #72DDF7;
+            --morado-creativo: #A682FF;
+            --texto-oscuro: #333333;
+            --blanco: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF9FB;
+            color: var(--texto-oscuro);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--rosa-vibrante), var(--morado-creativo));
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            margin: 0;
+            color: var(--blanco);
+            font-size: 4rem;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
+        }
+        
+        .subtitulo {
+            color: var(--blanco);
+            font-family: 'Playfair Display', serif;
+            margin-top: 0.5rem;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            letter-spacing: 1px;
+        }
+        
+        .portada {
+            width: 90%;
+            max-height: 400px;
+            object-fit: cover;
+            margin: 1rem auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border: 8px solid var(--blanco);
+            display: block;
+        }
+        
+        .botones-menu {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .boton-menu {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            min-width: 180px;
+        }
+        
+        .boton-dulce {
+            background-color: var(--rosa-vibrante);
+            color: white;
+        }
+        
+        .boton-salado {
+            background-color: var(--verde-menta);
+            color: white;
+        }
+        
+        .boton-menu:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        .seccion-menu {
+            display: none;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            background-color: var(--blanco);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .activo {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h2 {
+            color: var(--morado-creativo);
+            border-bottom: 2px solid var(--azul-cielo);
+            padding-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-style: italic;
+        }
+        
+        .item-menu {
+            display: flex;
+            justify-content: space-between;
+            margin: 1.5rem 0;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #E0E0E0;
+        }
+        
+        .nombre-item {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--morado-creativo);
+        }
+        
+        .precio-item {
+            color: var(--rosa-vibrante);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .descripcion-item {
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--morado-creativo), var(--rosa-vibrante));
+            padding: 2rem;
+            text-align: center;
+            color: var(--blanco);
+        }
+        
+        .info-contacto p {
+            margin: 0.5rem 0;
+        }
+        
+        .horario {
+            background-color: var(--blanco);
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            color: var(--texto-oscuro);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 3rem;
+            }
+            .boton-menu {
+                padding: 0.8rem 1.5rem;
+                min-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MON AMOUR</h1>
+        <div class="subtitulo">Delicias que enamoran el paladar</div>
+        <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Postres coloridos" class="portada">
+    </header>
+    
+    <div class="botones-menu">
+        <button class="boton-menu boton-dulce" onclick="mostrarMenu('dulce')">Postres Dulces</button>
+        <button class="boton-menu boton-salado" onclick="mostrarMenu('salado')">Cosas Saladas</button>
+    </div>
+    
+    <!-- Menú Dulce -->
+    <section id="menu-dulce" class="seccion-menu activo">
+        <h2>Nuestros Postres Dulces</h2>
+        <div class="item-menu">
+            <div>
+                <div class="nombre-item">Fresas con crema</div>
+                <div class="descripcion-item">Vaso chico - 40 MXN | Vaso mediano - 55 MXN | Vaso grande - 70 MXN</div>
+            </div>
+        </div>
+        <div class="item-menu">
+            <div>
+                <div class="nombre-item">Pay de queso</div>
+                <div class="descripcion-item">Rebanada generosa de nuestro pay casero</div>
+            </div>
+            <div class="precio-item">40 MXN</div>
+        </div>
+        <div class="item-menu">
+            <div>
+                <div class="nombre-item">Gelatina en vaso</div>
+                <div class="descripcion-item">Variedad de sabores disponibles</div>
+            </div>
+            <div class="precio-item">30 MXN</div>
+        </div>
+        <div class="item-menu">
+            <div>
+                <div class="nombre-item">Flan</div>
+                <div class="descripcion-item">Clásico flan casero con caramelo</div>
+            </div>
+            <div class="precio-item">40 MXN</div>
+        </div>
+        <div class="item-menu">
+            <div>
+                <div class="nombre-item">Crepas dulces</div>
+                <div class="descripcion-item">Con frutas frescas y toppings a elegir</div>
+            </div>
+            <div class="precio-item">40 MXN</div>
+        </div>
+        <div class="item-menu">
+            <div>
+                <div class="nombre-item">Waffles</div>
+                <div class="descripcion-item">Orden de 2 waffles</div>
+            </div>
+            <div class="precio-item">35 MXN</div>
+        </div>
+        <div class="item-menu">
+            <div>
+                <div class="nombre-item">Paletas de hielo</div>
+                <div class="descripcion-item">Maxi paletas - 25 MXN | Paletas normales - 15 MXN</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Menú Salado -->
+    <section id="menu-salado" class="seccion-menu">
+        <h2>Nuestras Opciones Saladas</h2>
+        <div class="item-menu">
+            <div>
+                <div class="nombre-item">Crepas saladas</div>
+                <div class="descripcion-item">Con jamón, queso, hawaina y salchicha</div>
+            </div>
+            <div class="precio-item">45 MXN</div>
+        </div>
+        <div class="item-menu">
+            <div>
+                <div class="nombre-item">Churritos</div>
+                <div class="descripcion-item">Bolsa de churritos tradicionales</div>
+            </div>
+            <div class="precio-item">25 MXN</div>
+        </div>
+        <div class="item-menu">
+            <div>
+                <div class="nombre-item">Dorilocos</div>
+                <div class="descripcion-item">Bolsa preparada con todos los ingredientes</div>
+            </div>
+            <div class="precio-item">55 MXN</div>
+        </div>
+        <div class="item-menu">
+            <div>
+                <div class="nombre-item">Papas Sabritas</div>
+                <div class="descripcion-item">Bolsa individual de tus sabores favoritos</div>
+            </div>
+            <div class="precio-item">15 MXN</div>
+        </div>
+        <div class="item-menu">
+            <div>
+                <div class="nombre-item">Papas locas</div>
+                <div class="descripcion-item">Bote de 1 litro con todos los toppings</div>
+            </div>
+            <div class="precio-item">80 MXN</div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="info-contacto">
+            <p><strong>📍 Ubicación:</strong> Villa Arista número 102, colonia Villa de Santa Julia</p>
+            <p><strong>📞 Teléfono:</strong> 479 213 9684</p>
+        </div>
+        <div class="horario">
+            <p><strong>🕒 Horario:</strong></p>
+            <p>Entre semana: 6pm - 10pm</p>
+            <p>Fines de semana: 6pm - 10pm</p>
+        </div>
+    </footer>
+    
+    <script>
+        function mostrarMenu(tipo) {
+            // Ocultar todos los menús
+            document.querySelectorAll('.seccion-menu').forEach(menu => {
+                menu.classList.remove('activo');
+            });
+            // Mostrar el menú seleccionado
+            document.getElementById(`menu-${tipo}`).classList.add('activo');
+            // Resaltar botón activo
+            document.querySelectorAll('.boton-menu').forEach(boton => {
+                boton.style.opacity = '0.8';
+            });
+            event.target.style.opacity = '1';
+        }
+        // Inicializar botón dulce como activo
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.boton-dulce').style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
